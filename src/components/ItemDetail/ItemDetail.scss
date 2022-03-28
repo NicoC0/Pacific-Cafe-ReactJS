@@ -1,0 +1,60 @@
+.item {
+    width: calc(100% - 30px);
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
+    margin: 0 auto;
+    margin-top: 30px;
+    &__titulo {
+        font-weight: bold;
+    }
+    &__precio {
+        font-weight: bold;
+    }
+    &__imagen {
+        width: 100%;
+        max-width: 200px;
+        object-fit: cover;
+        box-sizing: border-box;
+        margin: 0 auto;
+    }
+    &__contenido {
+        box-sizing: border-box;
+        padding: 0px 30px;
+    }
+    &__descripcion {
+        text-align: left;
+        margin-bottom: 30px;
+    }
+    &__stock {
+        & span {
+            font-weight: bold;
+        }
+    }
+}
+.itemCount{
+    margin: 0 auto;
+    margin-left: 0;
+}
+
+@media only screen and (max-width: 720px) {
+    .item {
+        width: calc(100% - 30px);
+        grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
+    }
+    .itemCount {
+        margin-bottom: 30px;
+    }
+}
+@media only screen and (max-width: 530px) {
+    .item{
+        &__content {
+            text-align: center;
+        }
+    }
+    .itemCount {
+        margin: 0 auto;
+        margin-bottom: 30px;
+    }
+}
+

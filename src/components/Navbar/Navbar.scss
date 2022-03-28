@@ -1,0 +1,136 @@
+@import "../../scss/default.scss";
+
+.Navbar {
+    width: 100%;
+    padding: 0 100px;
+    height: 85px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #010103;
+    box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.5);
+    box-sizing: border-box;
+    position: relative;
+    &__logo {
+        width: 90px;
+        height: auto;
+        padding-top: 0;
+    }
+    &__nav {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+    }
+    &__menu {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        list-style: none;
+        & a li {
+            color: $color-principal;
+        }
+    }
+    &__cart {
+        width: 90px;
+        text-align: right;
+    }
+    &__productos {
+        color: $color-principal;
+        cursor: pointer;
+        & .menu-desplegable {
+            color: $color-principal;
+            display: none;
+            width: 180px;
+            box-sizing: border-box;
+            background-color: #000000;
+            flex-flow: column nowrap;
+            align-items: flex-start;
+            justify-content: flex-start;
+            position: absolute;
+            top: 100%;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            z-index: 1;
+            box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.5);
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;
+            & div {
+                color: $color-principal;
+                padding: 12px 15px;
+                border-bottom: 1px solid $color-principal;
+                &:hover{
+                    background-color: hsl(0, 0%, 95%);
+                }
+            }
+            & a {
+                padding: 0;
+                width: 100%;
+                box-sizing: border-box;
+                text-decoration: none;
+                &:last-child div {
+                    border: none;
+                    border-bottom-left-radius: 6px;
+                    border-bottom-right-radius: 6px;
+                }
+            }
+        }
+        &:hover .menu-desplegable {
+            display: flex;
+        }
+    }
+}
+
+li {
+    box-sizing: border-box;
+    height: 100%;
+    text-decoration: none;
+    padding: 25px 15px 0px 15px;
+    font-weight: 500;
+    color: $color-principal;
+    &:hover{
+        color: $color-principal;
+    }
+}
+a {
+    box-sizing: border-box;
+    height: 100%;
+    padding-top: 25px;
+    text-decoration: none;
+    & li {
+        padding: 0px 15px 0px 15px;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    .Navbar {
+        padding: 0 30px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .Navbar {
+        padding: 0 15px;
+        &__logo {
+            display: none;
+        }
+        &__menu {
+            justify-content: flex-start;
+        }
+        &__productos {
+            & .menu-desplegable {
+                left: 0;
+                width: 100%;
+            }
+            &.show .menu-desplegable {
+                display: flex;
+            }
+        }
+    }
+}

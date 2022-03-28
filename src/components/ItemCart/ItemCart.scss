@@ -1,0 +1,47 @@
+@import "../../scss/default.scss";
+
+.itemCart {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0px;
+    box-sizing: border-box;
+    border-bottom: 1px solid gainsboro;
+    & p:first-child {
+        font-weight: bold;
+    }
+    & span {
+        font-weight: bold;
+    }
+    & img {
+        width: 100px;
+    }
+    &__info {
+        display: flex;
+        flex-flow: column;
+        align-content: center;
+        justify-content: flex-start;
+        margin-left: 15px;
+        margin-right: auto;
+        & p {
+            margin: 0;
+        }
+    }
+    &__precio {
+        font-weight: 700;
+    }
+    &__borrar {
+        color: $color-principal;
+        cursor: pointer;
+        margin-left: 15px;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .itemCart {
+        & img {
+            width: 70px;
+        }
+    }
+}

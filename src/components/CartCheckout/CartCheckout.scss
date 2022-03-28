@@ -1,0 +1,171 @@
+@import "../../scss/default.scss";
+
+.cartCheckout__container {
+    width: 90%;
+    max-width: 1280px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 auto;
+    box-sizing: border-box;
+    & h2 {
+        margin-bottom: 0px;
+    }
+    & .boton-borrar {
+        width: 40%;
+        height: 48px;
+        margin-top: 30px;
+        text-align: center;
+        background-color: transparent;
+        color: #000000;
+        border-radius: 6px;
+        border: 1px solid #000000;
+        cursor: pointer;
+        font-weight: 600;
+        text-transform: uppercase;
+        &:hover {
+            background-color: hsl(0, 0%, 90%)
+        }
+    }
+    & .boton-irTienda {
+        width: 100%;
+        height: 47px;
+        margin-top: 15px;
+        max-width: 150px;
+        border-radius: 6px;
+        border: 2px solid $color-principal;
+        font-weight: 600;
+        text-transform: uppercase;
+        background-color: black;
+        color: $color-principal;
+        text-align: center;
+        cursor: pointer;
+        &:hover{
+            background-color: rgb(53, 53, 53);
+        }
+    }
+}
+
+.cartCheckout__productos {
+    width: 60%;
+    padding-right: 30px;
+    box-sizing: border-box;
+}
+
+.cartCheckout__form {
+    width: 40%;
+    top: 0px;
+    display: flex;
+    position: sticky;
+    flex-flow: column nowrap;
+    & .estiloInput {
+        margin: 10px 0;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        border-radius: .25rem;
+        box-sizing: border-box;
+        &.error {
+            border-color: hsl(0, 100%, 50%);
+            color: hsl(0, 100%, 50%);
+        }
+        &:focus {
+            border-color: hsl(0, 0%, 0%);
+            outline: 0;
+        }
+    }
+    & label {
+        color: hsl(0, 100%, 50%);
+        display: block;
+    }
+    & .col-2 {
+        display: flex;
+        flex-flow: row nowrap;
+        width: 100%;
+        box-sizing: border-box;
+        & div {
+            display: flex;
+            flex-flow: column;
+            width: 60%;
+            box-sizing: border-box;
+            &:last-child {
+                width: 40%;
+                padding-left: 20px;
+            }
+        }
+    }
+    & .boton-generarOrden {
+        width: 100%;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 6px;
+        border: none;
+        height: 48px;
+        margin-top: 15px;
+        background-color: black;
+        border: 2px solid $color-principal;
+        color: $color-principal;
+        font-weight: 600;
+        text-transform: uppercase;
+        &:hover {
+            background-color: rgb(53, 53, 53);
+        }
+    }
+    & .informe {
+        margin-top: 5px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #fff;
+        background-color: rgb(185, 55, 55);
+        border-radius: 6px;
+        & span {
+            font-weight: 600;
+        }
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    .cartCheckout__container{
+        flex-flow: column;
+        & .boton-borrar{
+            margin: 40px auto 0px auto;
+        }
+    }
+    .cartCheckout__productos{
+        width: 100%;
+        padding: 0;
+    }
+    .cartCheckout__form{
+        width: 100%;
+        & .btn-orderGenerate{
+            margin-bottom: 30px;
+        }
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .cartCheckout__container{
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        & .boton-borrar{
+            width: 100%;
+            margin: 15px auto 0 auto;
+        }
+    }
+    .cartCheckout__productos{
+        & a{
+            display: inline-block;
+            width: 100%;
+            padding-top: 0;
+        }
+    } 
+}
+
+.sinProductos {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}

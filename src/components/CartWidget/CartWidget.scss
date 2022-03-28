@@ -1,0 +1,18 @@
+@import "../../scss/default.scss";
+
+.cartWidget {
+    color: $color-principal;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+        cursor: pointer;
+    }
+    &__cant{
+        font-size: 20px;;
+    }
+    &__icon {
+        font-size: 20px;
+    }
+}
